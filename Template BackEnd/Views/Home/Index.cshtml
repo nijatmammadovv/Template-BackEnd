@@ -1,0 +1,123 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Page Content-->
+<div class="container-fluid p-0">
+    <!-- About-->
+    <section class="resume-section" id="about">
+        <div class="resume-section-content">
+            @foreach (var item in Model.aboutSections)
+            {
+                <h1 class="mb-0">
+                    @item.Name
+                    <span class="text-primary">@item.Surname</span>
+                </h1>
+                <div class="subheading mb-5">
+                    @item.NumbervsAdress
+                    <a href="mailto:name@email.com">@item.Email</a>
+                </div>
+                <p class="lead mb-5">@item.Description</p>
+            }
+            <div class="social-icons">
+                <a class="social-icon" href="https://twitter.com/NijatMammadov17"><i class="fab fa-twitter"></i></a>
+                <a class="social-icon" href="https://github.com/nijatmammadovv"><i class="fab fa-github"></i></a>
+                <a class="social-icon" href="https://www.instagram.com/nijatmammadovv/"><i class="fab fa-instagram"></i></a>
+                <a class="social-icon" href="https://www.facebook.com/profile.php?id=100009098731780"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </section>
+    <hr class="m-0" />
+    <!-- Experience-->
+    <section class="resume-section" id="experience">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Təcrübə</h2>
+            @foreach (var item in Model.ExperienceSections)
+            {
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">@item.SpecialtyName</h3>
+                        <div class="subheading mb-3">@item.Title</div>
+                        <p>@item.Description</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">@item.PresentationHistory</span></div>
+                </div>
+            }
+        </div>
+    </section>
+    <hr class="m-0" />
+    <!-- Education-->
+    <section class="resume-section" id="education">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Təhsil</h2>
+            @foreach (var item in Model.EducationSections)
+            {
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">@item.UniversityName</h3>
+                        <div class="subheading mb-3">@item.Degree</div>
+                        <div>@item.Specialty</div>
+                        <p>@item.AverageScore</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">@item.PresentationHistory</span></div>
+                </div>
+            }
+        </div>
+    </section>
+    <hr class="m-0" />
+    <!-- Skills-->
+    <section class="resume-section" id="skills">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Bacarıqlar</h2>
+            <div class="subheading mb-3">Proqramlaşdırma Dilləri və Alətləri</div>
+            <ul class="list-inline dev-icons">
+                @foreach (var item in Model.SkillsSections)
+                {
+                    <li class="list-inline-item"><i class="@item.Icon"></i></li>
+                }
+            </ul>
+            <div class="subheading mb-3">İş axını</div>
+                <ul class="fa-ul mb-0">
+                    @foreach (var item1 in Model.SkillsSections)
+                    {
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                           @item1.WorkNames
+                        </li>
+                    }
+                </ul>
+            </div>
+    </section>
+    <hr class="m-0" />
+    <!-- Interests-->
+    <section class="resume-section" id="interests">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Maraqlar</h2>
+            @foreach (var item in Model.İnterestSections)
+            {
+                <p>@item.Description</p>
+                
+            }
+        </div>
+    </section>
+    <hr class="m-0" />
+    <!-- Awards-->
+    <section class="resume-section" id="awards">
+        <div class="resume-section-content">
+            <h2 class="mb-5">Mükafatlar və Sertifikatlar</h2>
+            <ul class="fa-ul mb-0">
+                @foreach (var item in Model.AwardsSections)
+                {
+                    <li>
+                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                        @item.AwardDegree
+                        <sup>@item.RowNumbers</sup>
+                        @item.AwardName
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </section>
+</div>

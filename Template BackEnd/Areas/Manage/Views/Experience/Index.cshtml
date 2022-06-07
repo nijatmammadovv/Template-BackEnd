@@ -1,0 +1,73 @@
+﻿@model List<ExperienceSection>
+@{ ViewData["Title"] = "Index"; }
+<section class="content-main">
+    <div class="content-header">
+        <div>
+            <h2 class="content-title card-title">Kateqoriyalar</h2>
+            <p>Kateqoriya əlavə edin, redaktə edin və ya silin</p>
+        </div>
+        <div>
+            <input type="text" placeholder="Axtarış edin" class="form-control bg-white" />
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-md-9">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" />
+                                        </div>
+                                    </th>
+                                    <th>Id</th>
+                                    <th>İxtisas Adı</th>
+                                    <th>Başlıq</th>
+                                    <th>Təsvir</th>
+                                    <th>Təqdimat Tarixi</th>
+                                    <th class="text-end">Fəaliyyət</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+
+                                {
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" />
+                                        </div>
+                                    <td>@item.Id</td>
+                                    <td><b>@item.SpecialtyName</b></td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.PresentationHistory</td>
+                                    <td class="text-end">
+                                        <div class="dropdown">
+                                            <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm"> <i class="material-icons md-more_horiz"></i> </a>
+                                            <div class="dropdown-menu">
+
+                                                <a class="dropdown-item" asp-controller="Experience" asp-action="Update" asp-route-id="@item.Id">Məlumatı redaktə edin</a>
+                                                <a class="dropdown-item text-danger" asp-action="Delete" asp-route-id="@item.Id">Silin</a>
+                                            </div>
+                                        </div>
+                                        <!-- dropdown //end -->
+                                    </td>
+                                </tr>}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- .col// -->
+            </div>
+            <!-- .row // -->
+        </div>
+        <!-- card body .// -->
+    </div>
+    <!-- card .// -->
+</section>

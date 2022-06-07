@@ -1,0 +1,48 @@
+﻿@model EducationSection
+@{
+    ViewData["Title"] = "Create";
+}
+<section class="content-main">
+    <div class="row">
+        <div class="col-9">
+            <div class="content-header">
+                <h2 class="content-title">Yeni Məlumat əlavə edin</h2>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4>Əsas</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-4">
+                            <label asp-for="UniversityName" class="form-label">Üniversitet adı</label>
+                            <input asp-for="UniversityName" placeholder="Bura yazın" class="form-control" />
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="Degree" class="form-label">İxtisas dərəcəsi</label>
+                            <input asp-for="Degree" placeholder="Bura yazın" class="form-control" />
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="Specialty" class="form-label">İxtisas adı</label>
+                            <textarea asp-for="Specialty" placeholder="Bura yazın" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="AverageScore" class="form-label">Ortalama bal</label>
+                            <textarea asp-for="AverageScore" placeholder="Bura yazın" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="PresentationHistory" class="form-label">Təqdimat Tarixi</label>
+                            <textarea asp-for="PresentationHistory" placeholder="Bura yazın" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button class="btn btn-light rounded font-sm mr-5 text-body hover-up">Qaralamada saxlayın</button>
+                        <button type="submit" class="btn btn-md rounded font-sm hover-up">Təsdiq et</button>
+                    </form>
+                </div>
+            </div>
+            <!-- card end// -->
+            <!-- card end// -->
+        </div>
+    </div>
+</section>
